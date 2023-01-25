@@ -1,0 +1,17 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading" >
+    <h1 style="text-align: center">Predicted crop(s):</h1>
+  </div>
+
+  <div class="box">
+    <% for (let i=0; i<newListItems.length; i++) { %>
+        <div class="item">
+              <p class="predict1" ><%=  newListItems[i] %></p>
+        </div>
+      <% } %>
+  </div>
+  <form action="/contract" method="post" class="view-contra">
+    <button class="btn" type="submit" name="submit">View Contracts</button>
+  </form>
+<%- include("footer") -%>

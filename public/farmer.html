@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Buyers page
+    </title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Goldman&family=Syne&display=swap" rel="stylesheet">
+      <style>
+        .header {
+          background-color: #397455;
+          height: 45px;
+          display: flex;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          box-shadow: 10px 9px 10px rgba(0,0,0,.15)
+        }
+        p{
+          font-family: "Syne";
+        }
+        body {
+          background-color: #acf3ce;
+
+          z-index: 10;
+        }
+        .details {
+          margin-top: 200px;
+          font-weight: bold;
+          text-align: center;
+          font-family: "Syne";
+        }
+        .form {
+          display: flex;
+          text-align: center;
+          display: block;
+          margin-bottom: 30px;
+          align-self:center;
+        }
+        .loc {
+          border-color: rgb(87, 81, 81);
+          border-radius: 7px;
+          margin-bottom: 30px;
+          height: 30px;
+          width: 250px;
+          outline:none !important;
+        }
+        .submit {
+          text-align: center;
+        }
+        .submit-button {
+          width: 250px;
+          height: 40px;
+          border: none;
+          border-radius: 7px;
+          box-shadow: 10px 10px 10px rgba(0,0,0, .3);
+          font-family: "Syne";
+          font-weight: bold;
+          cursor: pointer;
+        }
+        ::placeholder {
+          text-align: center;
+          color: black;
+          font-weight: bold;
+          font-family: "Syne";
+          opacity: .5;
+        }
+        .left-section {
+          margin-left: 5px;
+          margin-top: 8px;
+          font-weight: bold;
+        }
+        .right1 {
+          margin-top: 10px;
+          margin-left: 80%;
+          text-align: right;
+          display: inline-block;
+          font-weight: bold;
+          font-family: "Syne";
+        }
+        .right2 {
+          font-family: "Syne";
+          margin-top: 10px;
+          margin-left: 10px;
+          display: inline-block;
+          font-weight: bold;
+        }
+        .wheat-logo {
+
+
+          width: 1000px;
+          height:100%;
+          position: re;
+          top: 0px;
+          left: 0;
+          right: 0;
+          margin-left: 230px;
+          opacity: .5;
+        }
+        .wheat {
+
+          z-index: -1;
+          opacity: .7;
+          height: 100vh;
+          position: absolute;
+          top: 20px;
+          left: 0;
+          right: 0;
+
+        }
+      </style>
+  </head>
+
+  <body class="body">
+    <div class="header">
+      <p class="left-section">
+        FARMER LOGIN
+      </p>
+
+      <p class="right1">
+         <a href="index.html" style="text-decoration: none; color: black">HOME</a>
+      </p>
+      <p class="right2">
+        <a href="about.html" style="text-decoration: none; color: black">ABOUT</a>
+      </p>
+    </div>
+    <div>
+      <p class="details">
+        ENTER DETAILS
+      </p>
+
+      <form  class="form" method="post" action="/farmer">
+        <input class="loc" type="text" placeholder="Location" name="location" required><br>
+        <input class="loc"type="text" placeholder="pH" name="ph" required><br>
+        <input class="loc" type=" text" placeholder="Moisture" name="moisture" required><br>
+        <div  class="submit">
+          <button class="submit-button" type="submit" name="submit">SUBMIT</button>
+        </div>
+      </form>
+    </div>
+    <div class="wheat">
+      <img class="wheat-logo" src="wheat-logo.png" >
+    </div>
+    <footer class="footer" style="position:fixed;bottom:0;left:0;right:0; text-align:center">
+      <i class="social-icon fa-brands fa-facebook"></i>
+      <i class="social-icon fa-brands fa-twitter"></i>
+      <i class="social-icon fa-brands fa-instagram"></i>
+      <i class="social-icon fa-solid fa-envelope"></i>
+    </footer>
+  </body>
+</html>

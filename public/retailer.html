@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Retailer page
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&family=Syne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="retailer.css">
+  </head>
+  <body class="body">
+    <div class="header">
+      <p class="left-section">
+        RETAILER LOGIN
+      </p>
+      <p class="right1">
+         <a href="index.html" style="text-decoration: none; color: black">HOME</a>
+      </p>
+      <p class="right2">
+        <a href="about.html" style="text-decoration: none; color: black">ABOUT</a>
+      </p>
+    </div>
+    <div>
+      <p class="details">
+        ENTER DETAILS
+      </p>
+      <form  class="form" method="post" action="/retailer">
+        <input class="loc" type="text" placeholder="Company Name" name="company" required><br>
+        <input class="loc" type="text" placeholder="Demand(Crop name)" name="demand" required><br>
+        <input class="loc"type="text" placeholder="Quantity(in Kg)" name="quantity" required><br>
+        <input class="loc" type="text" placeholder="Offering Price" name="price" required><br>
+        <input class="loc" type="text" placeholder="Due date" name="time" required><br>
+      <div  class="submit">
+        <button id="submit" class="submit-button">SUBMIT</button>
+      </form>
+      <p id="demo"></p>
+        <div class="wheat">
+          <img class="wheat-logo" src="wheat-logo.png" >
+        </div>
+        <footer class="footer">
+          <i class="social-icon fa-brands fa-facebook"></i>
+          <i class="social-icon fa-brands fa-twitter"></i>
+          <i class="social-icon fa-brands fa-instagram"></i>
+          <i class="social-icon fa-solid fa-envelope"></i>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

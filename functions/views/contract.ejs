@@ -1,0 +1,42 @@
+<%- include("header") -%>
+<h1 class="contract">Contract details</h1>
+<div class="table">
+  <table cellspacing="25">
+    <thead>
+      <th>Company name</th>
+      <th>Demand</th>
+      <th>Quantity</th>
+      <th>Offering price</th>
+      <th>Due Date</th>
+    </thead>
+    <tr>
+        <td>
+          <% for (let i=0; i<newListItems.length; i++) { %>
+                  <p class="predict" ><%=  newListItems[i].company %></p>
+          <% } %>
+        </td>
+        <td>
+          <% for (let i=0; i<newListItems.length; i++) { %>
+                    <p class="predict" ><%=  newListItems[i].demand %></p>
+            <% } %>
+        </td>
+        <td>
+          <% for (let i=0; i<newListItems.length; i++) { %>
+                    <p class="predict" ><%=  newListItems[i].quantity %></p>
+            <% } %>
+        </td>
+        <td>
+          <% for (let i=0; i<newListItems.length; i++) { %>
+                    <p class="predict" ><%=  newListItems[i].price%></p>
+            <% } %>
+        </td>
+        <td>
+          <% for (let i=0; i<newListItems.length; i++) { %>
+                    <p class="predict" ><%=  newListItems[i].time %></p>
+            <% } %>
+        </td>
+    </tr>
+  </table>
+</div>
+
+<%- include("footer") -%>

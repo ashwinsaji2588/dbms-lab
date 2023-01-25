@@ -1,0 +1,113 @@
+.header {
+  background-color: #397455;
+  height: 45px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  box-shadow: 10px 9px 10px rgba(0,0,0,.15)
+}
+p{
+  font-family: "Syne";
+}
+body {
+  background-color: #acf3ce;
+}
+.details {
+  margin-top: 170px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Syne";
+}
+.form {
+  display: flex;
+  text-align: center;
+  display: block;
+  margin-bottom: 30px;
+  align-self:center;
+}
+.loc {
+  border-color: black;
+  border-radius: 7px;
+  height: 30px;
+  width: 250px;
+  margin-bottom: 30px;
+  outline:none !important;
+}
+.submit {
+  text-align: center;
+}
+.submit-button {
+  width: 250px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 10px 10px 10px rgba(0,0,0, .3);
+  font-family: "Syne";
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 1s;
+}
+.submit-button::active{
+  opacity:1;
+
+}
+::placeholder {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-family: "Syne";
+  opacity: .5;
+}
+.left-section {
+  margin-left: 5px;
+  margin-top: 8px;
+  font-weight: bold;
+}
+.right1 {
+  margin-top: 10px;
+  margin-left: 80%;
+  text-align: right;
+  display: inline-block;
+  font-weight: bold;
+}
+.right2 {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: inline-block;
+  font-weight: bold;
+}
+.right3 {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: inline-block;
+  font-weight: bold;
+}
+#thank-you-message {
+  display: none;
+}
+
+#thank-you-message.show {
+  display: block;
+}
+.wheat-logo {
+  width: 1000px;
+  height:100%;
+  position: re;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: 100px;
+  opacity: .5;
+}
+.wheat {
+  z-index: -1;
+  opacity: .7;
+  height: 100vh;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
