@@ -12,7 +12,9 @@ mongoose.set('strictQuery', false);
 ////connecting mongodb atlas to js////////////////////////
 mongoose.connect("mongodb+srv://admin-ashwin:admin@cluster0.qtcbu.mongodb.net/zenith",{useNewUrlParser:true});
 const arr=[];
-let temp,humi,ph,fRice=0,fMaize=0,fChick=0,fKidney=0,fRPigeon=0,fMoth=0,fMung=0,fBlack=0,fLentil=0,fPom=0,fBanana=0,fMango=0,fGrapes=0,fWater=0,fMusk=0,fApple=0,fOrange=0,fPappaya=0,fCoconut=0,fCotton=0,fJute=0,fCoffee=0;;
+let temp,humi,ph;
+var unique=[];
+const uq=[];
 const predicted=[];
 //////schema for crop/////
 const cropSchema={
@@ -68,12 +70,33 @@ app.get("/index.html",function(req,res){
 
 ///////for reading the contracts from the database///////////
 app.post("/contract",function(req,res){
-  Retailer.find({},function(er,foundItems){
+  console.log("contract",predicted);
+  let  ue = [...new Set(predicted)];
+  console.log("inside contract",ue);
+  Retailer.find({
+  'demand': {
+    '$in': ue
+  }
+},function(er,foundItems){
     if(er){
       console.log("Error");
     }else{
-        console.log(foundItems);
-        res.render("contract", {newListItems: foundItems});
+        if(foundItems.length===0)
+        {
+          Retailer.find({},function(er,itemsFound){
+            if(er)
+            {
+              console.log(er);
+            }
+            else{
+              res.render("contract", {newListItems: itemsFound});
+            }
+          });
+        }
+        else{
+          console.log("found items",foundItems);
+          res.render("contract", {newListItems: foundItems});
+        }
     }
 });
 });
@@ -93,7 +116,7 @@ app.post("/retailer",function(req,res)
       time:time
   })
   ////////inserting into db/////////////
-  console.log(retailer);
+  //console.log(retailer);
   retailer.save();
    res.redirect("/retailer.html");
 });
@@ -107,17 +130,18 @@ app.post("/farmer",function(req,res){
   const url="https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid=70b50a42c25f643c52e9da708af34cbe&units=metric";
   https.get(url,function(response)
   {
+      console.log(response.statusCode);
       if(response.statusCode==404){
         res.redirect("404.html");
-        return;
-        console.log("city not found");
+        //return;
+        //console.log("city not found");
       }
       else{
         response.on("data",function(data){
         const weather=JSON.parse(data);
         temp=weather.main.temp;
         humi=weather.main.humidity;
-        console.log("temperature=",temp,"humidity=",humi);
+        // console.log("temperature=",temp,"humidity=",humi);
         // console.log(typeof temp);
         // console.log(typeof humi);
         // console.log(typeof ph);
@@ -133,10 +157,10 @@ app.post("/farmer",function(req,res){
             foundItems.forEach(function(item){
               var crop=item.label;
               predicted.push(crop);
-              //console.log(predicted);
+              console.log("inside /farmers",predicted);
             });
-            let unique = [...new Set(predicted)];
-            console.log(unique);
+            unique = [...new Set(predicted)];
+
             res.render("prediction", {newListItems: unique});
           }
         });
