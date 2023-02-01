@@ -1,4 +1,5 @@
 const functions = require("firebase-functions");
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose=require("mongoose");
@@ -78,7 +79,7 @@ app.post("/contract",function(req,res){
     '$in': ue
   }
 },function(er,foundItems){
-    if(er){
+    if(er){``
       console.log("Error");
     }else{
         if(foundItems.length===0)
