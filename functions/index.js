@@ -1,5 +1,5 @@
+require('dotenv').config()
 const functions = require("firebase-functions");
-require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose=require("mongoose");
@@ -10,8 +10,9 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 mongoose.set('strictQuery', false);
+//console.log("atlas link",process.env.MONGODB_LINK);
 ////connecting mongodb atlas to js////////////////////////
-mongoose.connect("mongodb+srv://admin-ashwin:admin@cluster0.qtcbu.mongodb.net/zenith",{useNewUrlParser:true});
+mongoose.connect(process.env.MONGODB_LINK,{useNewUrlParser:true});
 const arr=[];
 let temp,humi,ph;
 var unique=[];
